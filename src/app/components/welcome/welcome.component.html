@@ -1,1 +1,38 @@
-<p>welcome works!</p>
+<div class="all">
+    <div class="card-deck" >
+        <div class="card" style="width: 25rem;">
+            <img src="https://ediblebloglive.wpengine.com/wp-content/uploads/2020/09/Alstroemerias-min-300x214.jpg" class="card-img-top" alt="first">
+            <div class="card-body">
+            <h5 class="card-title">Alstroemeria</h5>
+            <p class="card-text">The alstroemeria, also called the Peruvian lily, features streaked or speckled blossoms in a range of colors, including white, yellow, orange, pink, and red.</p>
+            <button class="btn btn-primary">Show another flower</button>
+            <button class="btn btn-secondary">Delete this flower</button>
+            </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+            <img src="https://ediblebloglive.wpengine.com/wp-content/uploads/2020/09/Calla-Lilies-min-420x420.jpg" class="card-img-top" alt="second">
+            <div class="card-body">
+            <h5 class="card-title">Calla Lily</h5>
+            <p class="card-text">Calla lilies come in a variety of different colors, from snow white to bright pink. They feature a beautiful trumpet shape with smooth, sword-like foliage.</p>
+            <button class="btn btn-primary">Show another flower</button>
+            <button class="btn btn-secondary">Delete this flower</button>
+        </div>
+        </div>
+        <div class="card text-white bg-info mb-3" style="width: 25rem;">
+            <img src="https://ediblebloglive.wpengine.com/wp-content/uploads/2020/09/Daisies-min-300x200.jpg" class="card-img-top" alt="third">
+            <div class="card-body">
+            <h5 class="card-title">Daisy</h5>
+            <p class="card-text">Daisies are a bright and fun flower. The petals come in a variety of colors, including white, blue, and lavender. Daisies feature a yellow central disc with a long stem.</p>
+            <button class="btn btn-primary">Show another flower</button> 
+            <button class="btn btn-secondary">Delete this flower</button>
+            </div>
+        </div>
+    </div>
+    <div class="card" style="width: 35rem; height: fit-content;" *ngFor="let card of cards">
+        <div class="card-header">{{card.title}}</div>
+        <div class="card-body">{{card.content}}</div>
+        <div class="card-footer"><img src={{card.image}}></div>
+        <button class="btn btn-danger" (click)="deleteCard(card)">Delete</button>
+    </div>
+    <button (click)="goBack()" class="btn btn-dark">Back to login</button>
+</div>

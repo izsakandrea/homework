@@ -1,0 +1,26 @@
+.all {
+    height: 150vh;
+    background: linear-gradient(to top, #c9c9ff 50%, #663399) no-repeat;
+}
+
+.card{
+    margin-left: 70px;
+    margin-top: 20px;
+    height: 300px;
+    border-radius: 10%;
+    display:flex;
+    /* display:inline-block;*/
+    padding: 15px;
+}
+
+.btn-primary{
+    margin: 3.5px;
+}
+
+.btn-secondary{
+    margin: 3.5px;
+}
+
+.btn-dark{
+    margin-left: 30px;
+}
