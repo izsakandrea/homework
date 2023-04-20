@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { first } from 'rxjs';
+import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
   selector: 'app-welcome',
@@ -14,7 +16,7 @@ export class WelcomeComponent {
     { id: 3, title: 'Daisy', content: 'Daisies are a bright and fun flower. The petals come in a variety of colors, including white, blue, and lavender. Daisies feature a yellow central disc with a long stem.', image: 'https://ediblebloglive.wpengine.com/wp-content/uploads/2020/09/Daisies-min-300x200.jpg'}
   ];
 
-  constructor (private router: Router){}
+  constructor (private router: Router, private apiService: ApiServiceService){}
  // @Input() index: number = 0;
  // @Output() deleteUser = new EventEmitter();
 
@@ -29,5 +31,13 @@ deleteCard(card: { id: number; title: string; content: string; image: string; })
   }
 }
 
+getFact(){
+  this.apiService.getFact().pipe(first()).subscribe((x : any) => {
+    const fact = document.getElementById('fact');
+    if(fact != null) {
+      fact.innerHTML = x.fact;
+    }
+  })
+}
 
 }
